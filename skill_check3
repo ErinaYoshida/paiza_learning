@@ -1,0 +1,35 @@
+input_line = input()
+
+number = []
+def sum_up(x, y):
+    number.append(int(x) + int(y))
+
+numlist = input_line.split(" ")
+a = numlist[0]
+b = numlist[1]
+c = numlist[2]
+d = numlist[3]
+
+def chain_sum_up(a,b,c,d):
+    x = a + b
+    y = c + d
+    sum_up(x, y)
+
+    x = b + a
+    sum_up(x, y)
+
+    y = d + c
+    sum_up(x, y)
+
+    x = a + b
+    sum_up(x, y)
+   
+chain_sum_up(a,b,c,d)
+b = numlist[2]
+c = numlist[1]
+chain_sum_up(a,b,c,d)
+b = numlist[3]
+c = numlist[2]
+d = numlist[1]
+chain_sum_up(a,b,c,d)
+print(max(number))
