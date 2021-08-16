@@ -1,0 +1,32 @@
+input_line = input().split(" ")
+N = int(input_line[0])
+M = int(input_line[1])
+a = [input() for i in range(M)]
+
+down_list = []
+man = 1
+while man <= N:
+    b = [input() for s in range(M)]
+
+    count = 0
+    down = 100
+    for g in range(M):
+        miss = abs(int(a[count]) - int(b[count]))
+        if miss <= 5:
+            pass
+        elif 5 < miss <= 10:
+            down -= 1
+        elif 10 < miss <= 20:
+            down -= 2
+        elif 20 < miss <= 30:
+            down -= 3
+        else:
+            down -= 5
+        count +=1
+    down_list.append(down)
+    man += 1
+r = max(down_list)
+if r >= 0:
+    print(max(down_list))
+else:
+    print(0)
