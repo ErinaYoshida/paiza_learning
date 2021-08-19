@@ -1,0 +1,18 @@
+import numpy as np
+input_line = input().split(" ")
+M = int(input_line[0])
+N = int(input_line[1])
+
+a = list(range(1, M))
+b = list(range(1, N))
+c = list(range(1,42))
+cc = np.array(c)
+cc = cc **2
+count = 0
+
+for x in a:
+    for y in b:
+        c2 = x **2 + y **2
+        if c2 in cc:
+            count += 1
+print(count)
