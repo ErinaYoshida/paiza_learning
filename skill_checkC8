@@ -4,6 +4,22 @@ sk = list(input())
 a = list(input())
 b = list(input())
 
+# qiitaで指摘を頂き修正
+def compare(x):
+    i = 0
+    for s in sk:
+        if i >= len(x):
+            break
+        if s == x[i]:
+            i += 1
+    return len(x) - i
+
+a = compare(a)
+b = compare(b)
+print(a,b)
+
+"""
+# 修正前
 def compare(x):
     for s in sk:
         if s == x[0]:
@@ -15,3 +31,4 @@ compare(a)
 compare(b)
 
 print(len(a),len(b))
+"""
