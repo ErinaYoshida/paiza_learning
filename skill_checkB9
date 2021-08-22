@@ -1,0 +1,26 @@
+input_line = input().split(" ")
+N = int(input_line[0])
+M = int(input_line[1])
+light = input().split(" ")
+intlight = [int(l) for l in light]
+Q = int(input())
+
+def avg(x):
+    b = sum(intlight[s:e]) // len(intlight[s:e])
+    if b >= M:
+        pass
+    else:
+        for i, z in enumerate(intlight[s:e]):
+            intlight[s + i] += M - b
+
+c = 0
+while c < Q:
+    a = input().split(" ")
+    s = int(a[0]) - 1
+    e = int(a[1])
+    avg(intlight)
+    c += 1
+    
+intlight=[str(v) for v in intlight]
+intlight=' '.join(intlight)
+print(intlight)
