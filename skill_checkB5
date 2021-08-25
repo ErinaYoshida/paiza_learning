@@ -1,0 +1,30 @@
+import math
+input_line = input().split(" ")
+N = int(input_line[0])
+X = int(input_line[1])
+
+count = 1
+tx_list = []
+while count <= N:
+    a = input().split(" ")
+    fx = int(a[0])
+    fc = int(a[1])
+    px = int(a[2])
+    pc = int(a[3])
+
+    if X < fx:
+        cost = fc
+    else:
+        b = X - fx
+        if b == 0:
+            cost = fc + pc
+        else:
+            c = math.ceil(b / px)
+            cost = fc + pc * c
+            if b % px == 0:
+                cost += pc
+    tx_list.append(cost)
+    count += 1
+d = min(tx_list)
+e = max(tx_list)
+print(d,e)
