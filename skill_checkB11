@@ -1,0 +1,27 @@
+input_line = input().split(" ")
+a, b, c = int(input_line[0]), int(input_line[1]), int(input_line[2])
+N = int(input())
+
+for n in range(N):
+    x = input().split(" ")
+    x1, x2 = int(x[0]), int(x[1])
+    m = x2 + b + c
+    if m >= 60:
+        m -= 60
+        h = x1 + 1
+    else:
+        h, m = x1, x2
+    if (h < 8) or (h == 8 and m <= 59):
+        x2 -= a
+        if x2 < 0:
+            A2 = x2 + 60
+            A1 = x1 - 1
+        else:
+            A1, A2 = x1, x2
+
+A1, A2 = str(A1),str(A2)
+if len(A1) < 2:
+    A1 = "0" + A1
+if len(A2) < 2:
+    A2 = "0" + A2
+print(A1 + ":" + A2)
