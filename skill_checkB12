@@ -1,0 +1,55 @@
+import numpy as np
+N = int(input())
+
+# 4×4の入力から取得したビンゴカードの配列
+X = []
+for a in range(4):
+    x = input().split(" ")
+    X.append(x)
+A = np.array(X)
+
+# 要素が全てFalseである4×4の行列を作成
+B = np.ones((4,4), dtype=np.bool)
+
+# 既に出た番号と要素が一致するか確認
+def check(z):
+    return p != z
+    
+# Aの行方向にcheckを適用したCとBの論理和をBに代入
+# 論理和にすることでN回の結果を一つにまとめている
+for n in range(N):
+    p = input()
+    C = np.apply_along_axis(check, 1, A)
+    B = np.logical_and(B, C)
+print(B)
+
+
+for axis in [0, 1]:
+    count_t = np.count_nonzero(B == True, axis)
+    #print(np.count_nonzero(B == True, axis))
+    print(count_t)
+    for i, row in enumerate(B):
+        for j, check in enumerate(row):
+            if 1 in count_t:
+                print(A[i,j])
+
+
+"""   
+for i, row in enumerate(B):
+  for j, check in enumerate(row):
+    if 1 in count_t:
+      print(A[i,j])
+"""
+"""
+B = np.array([True,True,False,True])
+check_f(B)
+
+I = np.apply_along_axis(check_f, 1, B)
+print(I)
+
+# Aに対して、行方向および列方向それぞれに、check_leftおよびcheck_rightを適用した行列Cを得て、BとCの論理積を、Bに代入するループ
+for axis in [0, 1]:
+  for checker in [check_left, check_right]:
+    C = np.apply_along_axis(checker, axis, A)
+    B = np.logical_and(B, C)
+"""
