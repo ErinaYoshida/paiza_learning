@@ -1,0 +1,8 @@
+input_line = input().split()
+l = input().split()
+
+H, W = int(input_line[0]), int(input_line[1])
+dy, dx = abs(int(l[0])), abs(int(l[1]))
+
+cul = W * dy + (H - dy) * dx
+print(cul)
