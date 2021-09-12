@@ -1,0 +1,20 @@
+input_line = input().split()
+H, W = int(input_line[0]), int(input_line[1])
+
+wcount = 0
+I = []
+for x in range(H):
+    l = input()
+    if "#" in l:
+        i = l.find("#")
+        I.append(i)
+        wcount += 1
+        while i < W:
+            i = l.find("#", i + 1)
+            if i != -1:
+                I.append(i)
+            else:
+                break
+s = len(set(I))
+a = wcount * W + s * (H - wcount)
+print(a)
