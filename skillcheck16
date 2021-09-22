@@ -1,0 +1,45 @@
+import numpy as np
+input_line = input().split()
+X, Y, Z = int(input_line[0]), int(input_line[1]), int(input_line[2])
+
+D = []
+for z in range(Z):
+    A = []
+    a = []
+    for x in range(X):
+        P = input()
+        for p in P:
+            if p == "#":
+                a.append(1)
+            else:
+                a.append(0)
+        A.append(a)
+        a = []
+    A = np.array(A)
+    B = np.sum(A, axis=0)
+    C = []
+    for b in B:
+        if b >= 1:
+            C.append(1)
+        else:
+            C.append(0)
+    D.append(C)
+    input()
+D.reverse()
+
+q = []
+Q = []
+
+for d in D:
+    for n in d:
+        if n == 1:
+            q.append("#")
+        else:
+            q.append(".")
+    Q.append(q)
+    q = []
+    
+for w in Q:
+    for W in w:
+        print(W, end="")
+    print()
