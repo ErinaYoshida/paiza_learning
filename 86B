@@ -1,0 +1,11 @@
+ab = input().split()
+a,b  = (ab[0]), (ab[1])
+ 
+ab = int(a + b)
+ab
+ 
+s = [i * i for i in range(1, 317)]
+if ab in s:
+  print("Yes")
+else:
+  print("No")
