@@ -1,0 +1,26 @@
+N = int(input())
+T = 0
+X = 0
+Y = 0
+for i in range(N):
+  txy = input().split()
+  t, x, y  = int(txy[0]), int(txy[1]), int(txy[2])
+  # 移動できる時間
+  T = t - T
+  # 移動したい距離
+  dx = abs(x - X)
+  dy = abs(y - Y)
+  d = dx + dy
+  # 移動に最低限必要な時間
+  a = T - d
+  # 移動後の時刻と現在地をセット
+  T, X, Y = t,x, y
+  # 移動可能か判定
+  if a >= 0:
+    if a % 2 == 0:
+      ans = "Yes"
+    else:
+      ans = "No"
+  else:
+    ans = "No"
+print(ans)
