@@ -1,0 +1,8 @@
+ab = input().split()
+a,b  = int(ab[0]), int(ab[1])
+ 
+ab = a * b
+if ab % 2 == 0:
+  print("Even")
+else:
+  print("Odd")
