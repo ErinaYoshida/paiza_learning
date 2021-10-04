@@ -1,0 +1,14 @@
+S = input()
+
+import re
+S = S.replace("eraser", "0")
+S = S.replace("erase", "0")
+S = S.replace("dreamer", "0")
+S = S.replace("dream", "0")
+
+S = re.sub("[abcdefghijklmnopqrstuvwxyz]", "1", S)
+
+if "1" in S:
+  print("No")
+else:
+  print("Yes")
