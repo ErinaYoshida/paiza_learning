@@ -9,6 +9,6 @@ S = S.replace("dream", "0")
 S = re.sub("[abcdefghijklmnopqrstuvwxyz]", "1", S)
 
 if "1" in S:
-  print("No")
+  print("NO")
 else:
-  print("Yes")
+  print("YES")
